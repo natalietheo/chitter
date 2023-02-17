@@ -1,15 +1,23 @@
+require('dotenv').config()
 const express = require('express');
-
+const chitterRoutes = require('./routes/tweets')
 // express app
 const app = express();
 
-// routes (responding to get reqs)
+// middleware
+// logging requests as they come in
+app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.json({mssg: 'Welcome to the app'})
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
 })
 
+// routes 
+
+app.use(chitterRoutes)
+
 // listen for requests
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
     console.log("listening on port 4000");
 })
