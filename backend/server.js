@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express');
-const chitterRoutes = require('./routes/tweets')
+const chitterRoutes = require('./routes/peeps')
 // express app
 const app = express();
 
