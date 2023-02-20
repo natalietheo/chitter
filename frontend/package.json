@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
     "cypress": "^12.6.0"
   }
 }
