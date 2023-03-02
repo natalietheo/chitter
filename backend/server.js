@@ -1,6 +1,17 @@
+//environment variables 
 require('dotenv').config()
+
 const express = require('express');
 const chitterRoutes = require('./routes/peeps')
+
+// mongoose
+const mongoose = require('mongoose')
+
+// Set up mongoose connection
+mongoose.set('strictQuery', false);
+const mongoDB = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.ds0ycgm.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
+
+
 // express app
 const app = express();
 
