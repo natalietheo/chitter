@@ -1,3 +1,4 @@
+//environment variables 
 require('dotenv').config()
 
 const express = require('express');
@@ -7,6 +8,14 @@ const uri = process.env.MONGO_URI
 console.log(uri);
 const port = process.env.PORT
 console.log(port);
+
+// mongoose
+const mongoose = require('mongoose')
+
+// Set up mongoose connection
+mongoose.set('strictQuery', false);
+const mongoDB = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.ds0ycgm.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
+
 
 // express app
 const app = express();
