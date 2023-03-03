@@ -4,19 +4,19 @@ const ClucksController = {
 
 // get all clucks
 Index: (req, res) => {
-    Cluck.find(async (err, posts, user_id) => {
+    Cluck.find(async (err, clucks, username) => {
       if (err) {
         throw err;
       }
-      res.status(200).json({ user_id: user_id, posts: posts });
+      res.status(200).json({ username: username, clucks: clucks });
     });
   },
 // get a single cluck
 
 // create a cluck
 Create: (req, res) => {
-    const message = req.body.message;
-    const user_id = req.body.username;
+    const Clucks = req.body.message;
+    const username = req.body.username;
     const postObject = {
       cluck,
       username,
