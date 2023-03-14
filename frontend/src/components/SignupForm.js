@@ -50,7 +50,7 @@ const SignupForm = ({ navigate }) => {
           console.log(response.json().error)
         } else {
           console.log(response)
-          navigate('/signup');
+          // navigate('/signup');
           setGeneralErrorMessage("Oops that didn't work. Please try again")
           console.log(response.json().error)
         }
