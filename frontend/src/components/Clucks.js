@@ -7,7 +7,7 @@ const Clucks = () => {
         <label className="label">
           <span className="label-text-alt">max 120 characters</span>
         </label>
-
+        
 
         <button className="btn btn-outline w-20">Cluck</button>
           </div>)
