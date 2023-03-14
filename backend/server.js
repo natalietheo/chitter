@@ -1,4 +1,6 @@
-//environment variables 
+const usersRouter = require("./routes/users");
+
+//environment variables
 require('dotenv').config()
 
 const express = require('express');
@@ -28,9 +30,10 @@ app.use((req, res, next) => {
     next()
 })
 
-// routes 
+// routes
 
 app.use(chitterRoutes)
+app.use("/users", usersRouter)
 
 //connect to DB
 mongoose.set("strictQuery", false);
@@ -45,4 +48,4 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   })
   .catch((err) => {
     console.log(err)
-  }) 
+  })
