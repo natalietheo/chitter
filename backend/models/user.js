@@ -4,29 +4,29 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema
 
-const UserSchema = new Schema({
+const UsersSchema = new Schema({
   email: { type: String, unique: true },
   password: { type: String },
   username: { type: String, unique: true },
 });
 
-UserSchema.statics.signup = async function(email, password, username) {
+// UserSchema.statics.signup = async function(email, password, username) {
 
-  const exists = await this.findOne({email})
-  const usernameExists = await this.findOne({username})
+//   const exists = await this.findOne({email})
+//   const usernameExists = await this.findOne({username})
 
-  if (exists) {
-    throw Error('Email already in use')
-  }  else if (usernameExists) {
-    throw Error('Username already in use')
-  }
+//   if (exists) {
+//     throw Error('Email already in use')
+//   }  else if (usernameExists) {
+//     throw Error('Username already in use')
+//   }
 
-  const user = await this.create({email, password, username})
+//   const user = await this.create({email, password, username})
 
-  return user
-};
+//   return user
+// };
 
-const User = mongoose.model("User", UserSchema);
+const Users = mongoose.model("Users", UsersSchema);
 
-module.exports = User;
+module.exports = Users;
 

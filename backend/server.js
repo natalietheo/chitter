@@ -1,10 +1,9 @@
-const usersRouter = require("./routes/users");
-
 //environment variables
 require('dotenv').config()
 
 const express = require('express');
 const chitterRoutes = require('./routes/Clucks')
+const usersRouter = require("./routes/users");
 const uri = process.env.MONGO_URI
 console.log(uri);
 const port = process.env.PORT
@@ -33,7 +32,7 @@ app.use((req, res, next) => {
 // routes
 
 app.use(chitterRoutes)
-app.use("/users", usersRouter)
+app.use(usersRouter)
 
 //connect to DB
 mongoose.set("strictQuery", false);

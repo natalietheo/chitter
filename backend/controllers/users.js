@@ -11,7 +11,7 @@ const UsersController = {
 
       user.save(async (err) => {
         if (err) {
-          console.log('error');
+          console.log('error controllers users.js - if err');
           throw err;
         }
         else {
