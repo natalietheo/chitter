@@ -2,8 +2,7 @@
 require('dotenv').config()
 
 const express = require('express');
-const mongoose = require('mongoose');
-const chitterRoutes = require('./routes/peeps')
+const chitterRoutes = require('./routes/Clucks')
 const uri = process.env.MONGO_URI
 console.log(uri);
 const port = process.env.PORT
