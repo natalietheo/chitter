@@ -15,23 +15,30 @@ Index: (req, res) => {
 
 // create a cluck
 Create: (req, res) => {
-    const Clucks = req.body.message;
+    const cluckPost = req.body.message;
     const username = req.body.username;
-    const postObject = {
-      cluck,
+    const userID = req.body.userID;
+    const cluckID = req.body.cluckID
+    const cluck = new Clucks({
+      cluckPost,
       username,
-    };
-
-    const cluck = new Clucks(postObject);
+      userID,
+      cluckID
+    });
 
     cluck.save(async (err) => {
       if (err) {
+        console.log('error');
         throw err;
       }
-      // console.log(req.user_id)
+      else {
+        console.log("no error here");
+      }
+     console.log("no error")
       res.status(201).json({ message: "OK" });
     });
   },
+  
 
 
 // delete a cluck

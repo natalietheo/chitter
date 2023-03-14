@@ -5,21 +5,23 @@ const Schema = mongoose.Schema
 const clucksSchema = new Schema({
     userID: {
         type: String,
-        required: true
+        // required: true
     },
     username: {
         type: String, 
-        required: true
+        // required: true
     },
-    cluck: {
+    cluckPost: {
         type: String,
-        required: true
+        // required: true
     },
     cluckID: {
         type: String, 
-        required: true
+        // required: true
     },
    }, { timestamps: true }
 )
 
-module.exports = mongoose.model('Cluck', clucksSchema)
+const Clucks = mongoose.model("clucks", clucksSchema)
+
+module.exports = Clucks
