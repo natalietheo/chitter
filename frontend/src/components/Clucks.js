@@ -1,4 +1,12 @@
+import { useState } from 'react';
+
 const Clucks = () => {    
+
+  const [cluckPost, setCluckPost] = useState("");
+  const handleCluckPost = () => {
+    setCluckPost(cluckPost);
+  }
+
     return (
         <div className="form-control">
         <label className="label">
@@ -9,7 +17,7 @@ const Clucks = () => {
         </label>
         
 
-        <button className="btn btn-outline w-20">Cluck</button>
+        <button className="btn btn-outline w-20" onClick={handleCluckPost}>Cluck</button>
           </div>)
 }
 
